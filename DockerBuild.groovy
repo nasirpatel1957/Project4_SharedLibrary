@@ -1,7 +1,6 @@
-def call(String hubUser, String project, String version){
+def call(String ECR_Repo_Name, String Account_id, String Region_Name){
     sh """
-        docker build -t ${hubUser}/${project} .
-        docker image tag ${hubUser}/${project} ${hubUser}/${project}:${version}
-        docker image tag ${hubUser}/${project} ${hubUser}/${project}:latest
+        docker build -t ECR_Repo_Name .
+        docker tag ECR_Repo_Name:latest Account_id.dkr.ecr.Region_Name.amazonaws.com/ECR_Repo_Name:latest
     """
 }
